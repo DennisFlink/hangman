@@ -4,3 +4,7 @@ body {
 main {
   background-color: aqua;
 }
+
+#body,#ground,#arms,#legs,#head,#scaffold{
+  visibility: hidden;
+}
