@@ -1,7 +1,12 @@
 .test {
   background-color: aliceblue;
-body{
-    color: white;
+}
+body {
+  color: white;
+}
 main {
   background-color: aqua;
+}
+.div {
+  /*testttttt*/
 }
