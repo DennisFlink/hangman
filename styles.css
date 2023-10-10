@@ -51,3 +51,7 @@ main {
   margin: 0.3rem;
   font-size: x-large;
 }
+
+#body,#ground,#legs,#arms,#scaffold,#head{
+display: none;
+}
