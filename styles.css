@@ -1,7 +1,11 @@
-.test {
-  background-color: aliceblue;
-body{
-    color: white;
+body {
+  color: white;
+}
 main {
   background-color: aqua;
+}
+
+#ground {
+  width: 25px;
+  height: 25px;
 }
