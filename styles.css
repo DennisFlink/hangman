@@ -1,20 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
-  color: white;
+  color: grey;
+  width: 100vw;
+  height: 100vh;
 }
 main {
-  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.div {
-  /*Ghayth*/
+.keyboard-box {
+  background-color: #e1e166;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 1em;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 15px;
 }
-.div1 {
-  /*Ghayth1*/
+
+.letter {
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  border: 2px solid black;
+  border-radius: 10px;
 }
-.div2 {
-  /*Ghayth2*/
+.row-3 {
+  grid-column-start: 3;
 }
-.test2 {
+.word-box {
+  display: flex;
 }
-.test2 {
-  /*hejsan hoppsans*/
+
+.letter-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 3rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 0.3rem;
+  font-size: x-large;
 }
