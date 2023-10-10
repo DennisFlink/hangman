@@ -1,3 +1,5 @@
 "use strict";
 
-let btn = x;
+let btn = xndhashiosahjio;
+
+let y = s;
