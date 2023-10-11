@@ -1,6 +1,14 @@
 
+const words = ["hangman", "javascript", "programming", "developer", "computer"];
+
 const maxTries = 6;
 let tries = 1;
+
+let selectedWord = words[Math.floor(Math.random() * words.length)];
+charWord = selectedWord.split("");
+createBoxes();
+
+
 
 /* KEYBOARD JAVASCRIPT */
 // prettier-ignore
@@ -17,6 +25,21 @@ keyboardLetters.forEach((letters) => {
   });
   keyboardBox.appendChild(button); // child of keyboardBox
 });
+
+
+function highlightKey(isRight,keyStroke){
+  console.log(keyStroke);
+  if(isRight){
+      keyStroke.style.backgroundColor ="green";
+     
+  }
+
+  else if (!isRight){
+     keyStroke.style.opacity = "0.2";
+  }
+  keyStroke.disable = true;
+}
+
 
 function addBodyParts() {
     if (tries <= maxTries) {
@@ -69,32 +92,32 @@ function addBodyParts() {
 
 }
 
-function print(letter) {
-  console.log(letter);
-}
-const words = ["hangman", "javascript", "programming", "developer", "computer"];
 
-let selectedWord = words[Math.floor(Math.random() * words.length)];
-
-charWord = selectedWord.split("");
-
-for (let i = 0; i < charWord.length; i++) {
-  const box = document.createElement("div");
-  box.className = "letter-box";
-  box.id = i + 1;
-  document.querySelector(".word-box").append(box);
+function createBoxes(){
+  for (let i = 0; i < charWord.length; i++) {
+    const box = document.createElement("div");
+    box.className = "letter-box";
+    box.id = i + 1;
+    document.querySelector(".word-box").append(box);
+  }
 }
 
 
 function print(letter) {
     let guess = 0;
+    console.log(letter);
     charWord.forEach((char, i) => {
       if (char === letter.toLowerCase()) {
-        document.getElementById(i + 1).textContent = char;
+        document.getElementById(i + 1).textContent = char.toUpperCase();
         guess = 1;
+        let keyToSend = document.getElementById(letter.toLowerCase());
+        highlightKey(true,keyToSend);
       }
+     
     });
     if (guess == 0) {
+      let keyToSend = document.getElementById(letter.toLowerCase());
+      highlightKey(false,keyToSend);
       addBodyParts();
     }
 }
