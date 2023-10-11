@@ -18,8 +18,10 @@ main {
 }
 .keyboard-box {
   background-color: #6e96c5;
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 35rem;
   gap: 1em;
   padding: 1rem;
   border: 2px solid black;
@@ -27,21 +29,15 @@ main {
 }
 
 .letter {
+  width: 2rem;
   background-color: antiquewhite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: xx-large;
   border: 2px solid black;
   border-radius: 10px;
 }
-.row-3 {
-  grid-column-start: 3;
-}
 .word-box {
   display: flex;
 }
-
 .letter-box {
   display: flex;
   justify-content: center;
@@ -54,20 +50,25 @@ main {
   font-size: x-large;
 }
 
-#body,#ground,#legs,#arms,#scaffold,#head{
-display: none;
+#body,
+#ground,
+#legs,
+#arms,
+#scaffold,
+#head {
+  display: none;
 }
 
-.tries-text{
+.tries-text {
   font-size: 4rem;
   color: black;
 }
 
-#tries{
-  color:#62a334;
+#tries {
+  color: #62a334;
 }
 
-.main-title{
+.main-title {
   color: black;
   font-size: 3rem;
 }
