@@ -13,6 +13,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 .keyboard-box {
   background-color: #e1e166;
@@ -54,4 +55,18 @@ main {
 
 #body,#ground,#legs,#arms,#scaffold,#head{
 display: none;
+}
+
+.tries-text{
+  font-size: 4rem;
+  color: black;
+}
+
+#tries{
+  color:#62a334;
+}
+
+.main-title{
+  color: black;
+  font-size: 3rem;
 }
