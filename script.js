@@ -41,6 +41,8 @@ function print(letter) {
     if (char === letter.toLowerCase()) {
       document.getElementById(i + 1).textContent = char;
       guess = 1;
+      document.getElementById(letter.toLowerCase()).style.background =
+        "#69e95d";
     }
   });
   if (guess == 0) {
