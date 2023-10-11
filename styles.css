@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  color: grey;
+  background-color: #808d9b;
+  color: black;
   width: 100vw;
   height: 100vh;
 }
@@ -16,7 +17,7 @@ main {
   gap: 1rem;
 }
 .keyboard-box {
-  background-color: #e1e166;
+  background-color: #6e96c5;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   gap: 1em;
