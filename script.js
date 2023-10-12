@@ -129,8 +129,10 @@ function print(letter) {
     wrongButton.classList.add('wrong');
     wrongGuessCounter++;
     console.log(wrongGuessCounter);
+    
     addBodyParts();
   }
+  keysPressed.push(letter);
   guessDisplay.textContent = `${wrongGuessCounter} / ${maxGuesses}`;
 
   if (wrongGuessCounter === maxGuesses) {
