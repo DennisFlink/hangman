@@ -34,7 +34,6 @@ keyboardLetters.forEach(letters => {
 });
 const letterButtons = document.querySelectorAll('.letter');
 
-// Event Delegation for keydown //
 document.addEventListener('keydown', event => {
   const key = event.key.toUpperCase();
   if (keyboardLetters.includes(key) && !keysPressed.includes(key)) {
