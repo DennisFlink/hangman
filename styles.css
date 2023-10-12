@@ -22,11 +22,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1em;
+  gap: 0.5em;
   padding: 1em;
   border: 2px solid black;
   border-radius: 15px;
-  width: 80%;
+  width: 100%;
 }
 
 .letter {
@@ -34,9 +34,12 @@ body {
   font-size: xx-large;
   border: 2px solid black;
   width: calc(100% / 9 - 10px);
-  padding: 5px;
+  padding: 0.5rem;
   border-radius: 10px;
   transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  
 }
 .letter:hover {
   background-color: #2980b9;
@@ -60,9 +63,9 @@ body {
 
 .letter-box {
   display: flex;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
-  width: 2.5rem;
+  width: 2rem;
   height: 3rem;
   border: 2px solid black;
   border-radius: 10px;
@@ -165,4 +168,16 @@ h1 {
 #scaffold,
 #head {
   display: none;
+}
+
+
+h1{
+  color: black;
+}
+
+@media (min-width: 800px){
+  .keyboard-box{
+    width: 70%;
+
+  }
 }
