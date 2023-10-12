@@ -41,14 +41,14 @@ body {
 .letter:hover {
   background-color: #2980b9;
 }
-.letter.wrong {
+.wrong {
   background-color: #adb5bd;
   opacity: 0.2;
   color: white;
   pointer-events: none;
 }
 
-.letter.right {
+.right {
   background-color: green;
   color: white;
   pointer-events: none;
