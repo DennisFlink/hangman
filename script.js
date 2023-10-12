@@ -45,11 +45,13 @@ document.addEventListener('keydown', event => {
 
 // NEW GAME FUNCTION //
 function newGame() {
+  keysPressed = [];
   playing = true;
   wrongGuessCounter = 0;
   rightGuesses = 0;
   selectedWord = generateWord();
   charWord = selectedWord.split('');
+  guessDisplay.textContent = '0 / 6';
   message.textContent = '';
 
   // Clear word boxes //
@@ -58,22 +60,19 @@ function newGame() {
     wordBox.removeChild(wordBox.firstChild);
   }
 
-  // Clear keybords input
-  keysPressed = [];
-
   for (let i = 0; i < charWord.length; i++) {
     const box = document.createElement('div');
     box.className = 'letter-box';
     box.id = i + 1;
     document.querySelector('.word-box').append(box);
   }
+
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
   letterButtons.forEach(button => {
     button.classList.remove('wrong');
     button.classList.remove('right');
   });
-  guessDisplay.textContent = '0 / 6';
   svgId.forEach(id => {
     id.style.display = 'none';
   });
@@ -108,7 +107,7 @@ function generateWord() {
     'computer',
   ];
   selectedWord = words[Math.floor(Math.random() * words.length)];
-  return selectedWord;
+  return selectedWord.toLowerCase();
 }
 
 function print(letter) {
@@ -139,8 +138,6 @@ function print(letter) {
     }
   }
 }
-
-newGameBtn.addEventListener('click', newGame);
 
 /* DISPLAYING HANGMAN */
 function addBodyParts() {
@@ -175,3 +172,5 @@ function addBodyParts() {
     }
   }
 }
+
+newGameBtn.addEventListener('click', newGame);
