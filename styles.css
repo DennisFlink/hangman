@@ -70,7 +70,6 @@ body {
   font-size: x-large;
 }
 
-
 /* MODAL-BOX */
 .modal-box {
   display: block;
@@ -158,23 +157,12 @@ h1 {
 #tries {
   color: #62a334;
 }
->>>>>>> Dennis
-=======
-#body,#ground,#legs,#arms,#scaffold,#head{
-display: none;
-}
 
-.tries-text{
-  font-size: 4rem;
-  color: black;
+#body,
+#ground,
+#legs,
+#arms,
+#scaffold,
+#head {
+  display: none;
 }
-
-#tries{
-  color:#62a334;
-}
-
-.main-title{
-  color: black;
-  font-size: 3rem;
-}
->>>>>>> 44b9216761b7d35c51d34893ceeea6175c430373
