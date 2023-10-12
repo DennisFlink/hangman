@@ -12,6 +12,7 @@ let rightGuesses = 0;
 let selectedWord;
 let charWord = [];
 let keysPressed = [];
+let isPlaying = true;
 /////////////////////////
 
 /* KEYBOARD JAVASCRIPT */
@@ -44,6 +45,7 @@ document.addEventListener('keydown', event => {
 });
 // NEW GAME FUNCTION //
 function newGame() {
+  isPlaying = true;
   wrongGuessCounter = 0;
   rightGuesses = 0;
   selectedWord = generateWord();
@@ -81,6 +83,7 @@ function newGame() {
 newGame();
 // GAMEOVER FUNCTION CALLING MODAL //
 function gameOver(isItOver) {
+  isPlaying = false;
   let ng = isItOver;
   letterButtons.forEach(button => {
     button.classList.add('wrong');
@@ -112,6 +115,9 @@ function generateWord() {
 }
 
 function print(letter) {
+  if(isPlaying){
+
+  
   let guess = 0;
   const rightButton = document.getElementById(letter.toLowerCase());
   charWord.forEach((char, i) => {
@@ -141,6 +147,7 @@ function print(letter) {
   if (rightGuesses === selectedWord.length) {
     gameOver(1);
   }
+}
 }
 
 newGameBtn.addEventListener('click', newGame);
