@@ -31,12 +31,10 @@ keyboardLetters.forEach(letters => {
 });
 const letterButtons = document.querySelectorAll('.letter');
 
-
-
 document.addEventListener('keydown', event => {
   const key = event.key.toUpperCase();
 
-  if (keyboardLetters.includes(key) && !keysPressed.includes(key) ) {
+  if (keyboardLetters.includes(key) && !keysPressed.includes(key)) {
     keysPressed.push(key);
     console.log(keysPressed);
     print(key);
@@ -48,15 +46,16 @@ function newGame() {
   rightGuesses = 0;
   selectedWord = generateWord();
   charWord = selectedWord.split('');
-  let bodyParts = document.querySelectorAll("#body,#ground,#legs,#arms,#scaffold,#head");
- 
+  let bodyParts = document.querySelectorAll(
+    '#body,#ground,#legs,#arms,#scaffold,#head'
+  );
+
   bodyParts.forEach(element => {
-    element.style.display = "none";
+    element.style.display = 'none';
   });
 
   // Clear keybords input
   keysPressed = [];
-
 
   // Clear word boxes //
   const wordBox = document.querySelector('.word-box');
@@ -75,7 +74,6 @@ function newGame() {
     button.classList.remove('right');
 
     guessDisplay.textContent = '0 / 6';
-
   });
 }
 newGame();
