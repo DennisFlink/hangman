@@ -49,6 +49,7 @@ function newGame() {
   rightGuesses = 0;
   selectedWord = generateWord();
   charWord = selectedWord.split('');
+  message.textContent = '';
 
   // Clear word boxes //
   const wordBox = document.querySelector('.word-box');
@@ -80,6 +81,7 @@ newGame();
 // GAMEOVER FUNCTION CALLING MODAL //
 function gameOver(isItOver) {
   playing = false;
+  console.log(isItOver);
   letterButtons.forEach(button => {
     button.classList.add('wrong');
   });
