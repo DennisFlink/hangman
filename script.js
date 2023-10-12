@@ -5,6 +5,7 @@ const modal = document.querySelector('.modal-box');
 const modalHeader = document.querySelector('.modal-box-header');
 const newGameBtn = document.querySelector('.new-game');
 const message = document.querySelector('.message');
+const overlay = document.querySelector('.overlay');
 const svgId = document.querySelectorAll('svg [id]');
 
 /* DECLARING GLOBAL VARIABLES */
@@ -67,6 +68,7 @@ function newGame() {
     document.querySelector('.word-box').append(box);
   }
   modal.classList.add('hidden');
+  overlay.classList.add('hidden');
   letterButtons.forEach(button => {
     button.classList.remove('wrong');
     button.classList.remove('right');
@@ -85,11 +87,11 @@ function gameOver(isItOver) {
   letterButtons.forEach(button => {
     button.classList.add('wrong');
   });
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
   if (isItOver) {
-    modal.classList.remove('hidden');
     modalHeader.textContent = 'You Win 🎉';
   } else {
-    modal.classList.remove('hidden');
     modalHeader.textContent = 'You Lose 😥';
     message.textContent = `The correct word is: ${charWord
       .join('')
