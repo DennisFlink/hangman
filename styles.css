@@ -134,7 +134,7 @@ body {
 #arms,
 #scaffold,
 #head {
-  display: block;
+  display: none;
 }
 
 h1 {
@@ -152,4 +152,17 @@ h1 {
   font-size: 2em;
   text-align: center;
   padding: 1em;
+}
+
+#tries {
+  color: #62a334;
+}
+
+#body,
+#ground,
+#legs,
+#arms,
+#scaffold,
+#head {
+  display: none;
 }
