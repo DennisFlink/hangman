@@ -1,6 +1,7 @@
 'use strict';
 
 const guessDisplay = document.querySelector('.guess-text p');
+const triesText = document.querySelector(".tries");
 const modal = document.querySelector('.modal-box');
 const modalHeader = document.querySelector('.modal-box-header');
 const newGameBtn = document.querySelector('.new-game');
