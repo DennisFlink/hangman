@@ -193,13 +193,13 @@ function addBodyParts() {
       addPart = document.querySelector('svg > #ground');
       addPart.style.display = 'block';
       guessSpan.textContent = '1';
-      guessSpan.style.color = 'green';
+      guessSpan.style.color = '#51cf66';
       break;
     case 2:
       addPart = document.querySelector('svg > #scaffold');
       addPart.style.display = 'block';
       guessSpan.textContent = '2';
-      guessSpan.style.color = 'green';
+      guessSpan.style.color = '#51cf66';
       break;
     case 3:
       addPart = document.querySelector('svg > #head');
@@ -217,16 +217,39 @@ function addBodyParts() {
       addPart = document.querySelector('svg > #arms');
       addPart.style.display = 'block';
       guessSpan.textContent = '5';
-      guessSpan.style.color = 'red';
+      guessSpan.style.color = '#ff6b6b';
       break;
     case 6:
       addPart = document.querySelector('svg > #legs');
       addPart.style.display = 'block';
       guessSpan.textContent = '6';
-      guessSpan.style.color = 'red';
+      guessSpan.style.color = '#ff6b6b';
       break;
     default:
   }
 }
 
 newGameBtn.addEventListener('click', newGame);
+
+/* function addBodyParts() {
+  const hangmanPartIds = [
+    '#ground',
+    '#scaffold',
+    '#head',
+    '#body',
+    '#arms',
+    '#legs',
+  ];
+
+  hangmanPartIds.forEach((partId, index) => {
+    const addPart = document.querySelector('svg ' + partId);
+
+    if (index < wrongGuessCounter) {
+      addPart.style.display = 'block';
+    } else {
+      addPart.style.display = 'none';
+    }
+  });
+
+  guessSpan.textContent = wrongGuessCounter.toString();
+} */
