@@ -205,13 +205,13 @@ function addBodyParts() {
       addPart = document.querySelector('svg > #head');
       addPart.style.display = 'block';
       guessSpan.textContent = '3';
-      guessSpan.style.color = 'yellow';
+      guessSpan.style.color = '#fcc419';
       break;
     case 4:
       addPart = document.querySelector('svg > #body');
       addPart.style.display = 'block';
       guessSpan.textContent = '4';
-      guessSpan.style.color = 'yellow';
+      guessSpan.style.color = '#fcc419';
       break;
     case 5:
       addPart = document.querySelector('svg > #arms');
