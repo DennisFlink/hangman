@@ -24,7 +24,7 @@ h1 {
 
 /* KEYBOARD FOR INPUT */
 .keyboard-box {
-  background-color: #e1e166;
+  background-color: #8ce99a;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -55,7 +55,7 @@ h1 {
 }
 
 .right {
-  background-color: green;
+  background-color: #2b8a3e;
   color: white;
   pointer-events: none;
 }
@@ -166,4 +166,8 @@ h1 {
   font-size: 2em;
   text-align: center;
   padding: 1em;
+}
+
+.span {
+  color: green;
 }

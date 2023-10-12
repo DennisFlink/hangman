@@ -1,5 +1,5 @@
 'use strict';
-
+const guessSpan = document.querySelector('.span');
 const guessDisplay = document.querySelector('.guess-text p');
 const modal = document.querySelector('.modal-box');
 const modalHeader = document.querySelector('.modal-box-header');
@@ -51,7 +51,8 @@ function newGame() {
   rightGuesses = 0;
   selectedWord = generateWord();
   charWord = selectedWord.split('');
-  guessDisplay.textContent = '0 / 6';
+  guessSpan.textContent = '0';
+  guessSpan.style.color = '';
   message.textContent = '';
 
   // Clear word boxes //
@@ -82,7 +83,6 @@ newGame();
 // GAMEOVER FUNCTION CALLING MODAL //
 function gameOver(isItOver) {
   playing = false;
-  console.log(isItOver);
   letterButtons.forEach(button => {
     button.classList.add('wrong');
   });
@@ -100,11 +100,57 @@ function gameOver(isItOver) {
 // Generating a new Word //
 function generateWord() {
   const words = [
-    'hangman',
-    'javascript',
-    'programming',
-    'developer',
-    'computer',
+    'boRd',
+    'stOl',
+    'tavla',
+    'snus',
+    'asfalt',
+    'Borås',
+    'LidköPing',
+    'tangentbord',
+    'dator',
+    'utvecklare',
+    'Javascript',
+    'fjärrkontrol',
+    'zerbra',
+    'glasÖgon',
+    'fotbollSkor',
+    'yh',
+    'Kebab',
+    'pizza',
+    'Coop',
+    'garageport',
+    'suddgummi',
+    'energijägare',
+    'penna',
+    'bregott',
+    'semper',
+    'mjölk',
+    'modersmjölksersättning',
+    'arbetsförmedlingen',
+    'akassa',
+    'pengar',
+    'trump',
+    'sverige',
+    'stockholm',
+    'rinkeby',
+    'botkyrka',
+    'strängnäs',
+    'vivalla',
+    'luftpoddar',
+    'donken',
+    'bk',
+    'ifk',
+    'skaraborg',
+    'twitch',
+    'loka',
+    'lampa',
+    'glödlampa',
+    'grupprum',
+    'adapter',
+    'linkedin',
+    'corona',
+    'zlatan',
   ];
   selectedWord = words[Math.floor(Math.random() * words.length)];
   return selectedWord.toLowerCase();
@@ -129,7 +175,7 @@ function print(letter) {
       addBodyParts();
     }
     keysPressed.push(letter);
-    guessDisplay.textContent = `${wrongGuessCounter} / ${maxGuesses}`;
+
     if (wrongGuessCounter === maxGuesses) {
       gameOver(0);
     }
@@ -141,35 +187,45 @@ function print(letter) {
 
 /* DISPLAYING HANGMAN */
 function addBodyParts() {
-  if (wrongGuessCounter <= maxGuesses) {
-    let addPart;
-    switch (wrongGuessCounter) {
-      case 1:
-        addPart = document.querySelector('svg > #ground');
-        addPart.style.display = 'block';
-        break;
-      case 2:
-        addPart = document.querySelector('svg > #scaffold');
-        addPart.style.display = 'block';
-        break;
-      case 3:
-        addPart = document.querySelector('svg > #head');
-        addPart.style.display = 'block';
-        break;
-      case 4:
-        addPart = document.querySelector('svg > #body');
-        addPart.style.display = 'block';
-        break;
-      case 5:
-        addPart = document.querySelector('svg > #arms');
-        addPart.style.display = 'block';
-        break;
-      case 6:
-        addPart = document.querySelector('svg > #legs');
-        addPart.style.display = 'block';
-        break;
-      default:
-    }
+  let addPart;
+  switch (wrongGuessCounter) {
+    case 1:
+      addPart = document.querySelector('svg > #ground');
+      addPart.style.display = 'block';
+      guessSpan.textContent = '1';
+      guessSpan.style.color = 'green';
+      break;
+    case 2:
+      addPart = document.querySelector('svg > #scaffold');
+      addPart.style.display = 'block';
+      guessSpan.textContent = '2';
+      guessSpan.style.color = 'green';
+      break;
+    case 3:
+      addPart = document.querySelector('svg > #head');
+      addPart.style.display = 'block';
+      guessSpan.textContent = '3';
+      guessSpan.style.color = 'yellow';
+      break;
+    case 4:
+      addPart = document.querySelector('svg > #body');
+      addPart.style.display = 'block';
+      guessSpan.textContent = '4';
+      guessSpan.style.color = 'yellow';
+      break;
+    case 5:
+      addPart = document.querySelector('svg > #arms');
+      addPart.style.display = 'block';
+      guessSpan.textContent = '5';
+      guessSpan.style.color = 'red';
+      break;
+    case 6:
+      addPart = document.querySelector('svg > #legs');
+      addPart.style.display = 'block';
+      guessSpan.textContent = '6';
+      guessSpan.style.color = 'red';
+      break;
+    default:
   }
 }
 
