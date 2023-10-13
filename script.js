@@ -7,6 +7,8 @@ const newGameBtn = document.querySelector('.new-game');
 const message = document.querySelector('.message');
 const overlay = document.querySelector('.overlay');
 const svgId = document.querySelectorAll('svg [id]');
+let usa = document.getElementById('usa');
+let swe = document.getElementById('swe');
 
 /* DECLARING GLOBAL VARIABLES */
 const maxGuesses = 6;
@@ -43,12 +45,23 @@ document.addEventListener('keydown', event => {
 });
 
 // NEW GAME FUNCTION //
-function newGame() {
+function newGame(lang) {
   keysPressed = [];
   playing = true;
   wrongGuessCounter = 0;
   rightGuesses = 0;
-  selectedWord = generateWord();
+  console.log(lang);
+
+  usa.classList.remove('chossen-language');
+  swe.classList.remove('chossen-language');
+  if (lang == 'usa') {
+    document.getElementById('swe').classList.add('chossen-language');
+    selectedWord = generateWord(lang);
+  }
+  if (lang == 'swe') {
+    document.getElementById('usa').classList.add('chossen-language');
+    selectedWord = generateWord(lang);
+  }
   charWord = selectedWord.split('');
   guessSpan.textContent = '0';
   guessSpan.style.color = '';
@@ -77,7 +90,6 @@ function newGame() {
     id.style.display = 'none';
   });
 }
-newGame();
 
 // GAMEOVER FUNCTION CALLING MODAL //
 function gameOver(isItOver) {
@@ -96,8 +108,10 @@ function gameOver(isItOver) {
       .toUpperCase()}`;
   }
 }
+
 // Generating a new Word //
-function generateWord() {
+function generateWord(lang) {
+  const engWord = ['computer', 'world', 'amazing', 'pool'];
   const words = [
     'boRd',
     'stOl',
@@ -151,7 +165,12 @@ function generateWord() {
     'corona',
     'zlatan',
   ];
-  selectedWord = words[Math.floor(Math.random() * words.length)];
+  if (lang == 'swe') {
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+  }
+  if (lang == 'usa') {
+    selectedWord = engWord[Math.floor(Math.random() * engWord.length)];
+  }
   return selectedWord.toLowerCase();
 }
 

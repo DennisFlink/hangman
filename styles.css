@@ -162,6 +162,17 @@ h1 {
   top: 20%;
 }
 
+/* LANGUAGE */
+.lang {
+  position: absolute;
+  left: 80%;
+  top: 20%;
+}
+
+.chossen-language {
+  opacity: 0.2;
+}
+
 .guess-text p {
   font-size: 2em;
   text-align: center;
