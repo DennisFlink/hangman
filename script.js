@@ -13,6 +13,7 @@ let rightGuesses = 0;
 let selectedWord;
 let charWord = [];
 let keysPressed = [];
+let isPlaying = true;
 /////////////////////////
 
 /* KEYBOARD JAVASCRIPT */
@@ -42,6 +43,7 @@ document.addEventListener('keydown', event => {
 });
 // NEW GAME FUNCTION //
 function newGame() {
+  isPlaying = true;
   wrongGuessCounter = 0;
   rightGuesses = 0;
   selectedWord = generateWord();
@@ -79,6 +81,7 @@ function newGame() {
 newGame();
 // GAMEOVER FUNCTION CALLING MODAL //
 function gameOver(isItOver) {
+  isPlaying = false;
   let ng = isItOver;
   letterButtons.forEach(button => {
     button.classList.add('wrong');
@@ -120,30 +123,34 @@ function generateWord() {
 }
 
 function print(letter) {
-  let guess = 0;
-  const rightButton = document.getElementById(letter.toLowerCase());
-  charWord.forEach((char, i) => {
-    if (char === letter.toLowerCase()) {
-      document.getElementById(i + 1).textContent = char;
-      guess = 1;
-      rightButton.classList.add('right');
-      rightGuesses++;
-    }
-  });
-  if (guess == 0) {
-    const wrongButton = document.getElementById(letter.toLowerCase());
-    wrongButton.classList.add('wrong');
-    wrongGuessCounter++;
-    addBodyParts();
-  }
-  keysPressed.push(letter);
-  guessDisplay.textContent = `${wrongGuessCounter} / ${maxGuesses}`;
+  if (isPlaying) {
+    let guess = 0;
+    const rightButton = document.getElementById(letter.toLowerCase());
+    charWord.forEach((char, i) => {
+      if (char === letter.toLowerCase()) {
+        document.getElementById(i + 1).textContent = char;
+        guess = 1;
+        rightButton.classList.add('right');
+        rightGuesses++;
+      }
+    });
+    if (guess == 0) {
+      const wrongButton = document.getElementById(letter.toLowerCase());
+      wrongButton.classList.add('wrong');
+      wrongGuessCounter++;
+      console.log(wrongGuessCounter);
 
-  if (wrongGuessCounter === maxGuesses) {
-    gameOver(0);
-  }
-  if (rightGuesses === selectedWord.length) {
-    gameOver(1);
+      addBodyParts();
+    }
+    keysPressed.push(letter);
+    guessDisplay.textContent = `${wrongGuessCounter} / ${maxGuesses}`;
+
+    if (wrongGuessCounter === maxGuesses) {
+      gameOver(0);
+    }
+    if (rightGuesses === selectedWord.length) {
+      gameOver(1);
+    }
   }
 }
 
