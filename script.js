@@ -5,6 +5,7 @@ const modal = document.querySelector('.modal-box');
 const modalHeader = document.querySelector('.modal-box-header');
 const newGameBtn = document.querySelector('.new-game');
 const message = document.querySelector('.message');
+
 /* DECLARING GLOBAL VARIABLES */
 const maxGuesses = 6;
 let wrongGuessCounter = 0;
@@ -36,7 +37,6 @@ document.addEventListener('keydown', event => {
 
   if (keyboardLetters.includes(key) && !keysPressed.includes(key)) {
     keysPressed.push(key);
-    console.log(keysPressed);
     print(key);
   }
 });
@@ -98,15 +98,25 @@ function gameOver(isItOver) {
 // Generating a new Word //
 function generateWord() {
   const words = [
-    'hangman',
-    'javascript',
-    'programming',
-    'developer',
-    'computer',
+    'boRd',
+    'stOl',
+    'tavla',
+    'snus',
+    'asfalt',
+    'Borås',
+    'LidköPing',
+    'tangentbord',
+    'dator',
+    'utvecklare',
+    'Javascript',
+    'fjärrkontrol',
+    'zerbra',
+    'glasÖgon',
+    'fotbollSkor',
+    'yh',
   ];
   selectedWord = words[Math.floor(Math.random() * words.length)];
-  console.log(selectedWord);
-  return selectedWord;
+  return selectedWord.toLowerCase();
 }
 
 function print(letter) {
@@ -118,17 +128,15 @@ function print(letter) {
       guess = 1;
       rightButton.classList.add('right');
       rightGuesses++;
-      console.log(rightGuesses);
-      console.log(selectedWord.length);
     }
   });
   if (guess == 0) {
     const wrongButton = document.getElementById(letter.toLowerCase());
     wrongButton.classList.add('wrong');
     wrongGuessCounter++;
-    console.log(wrongGuessCounter);
     addBodyParts();
   }
+  keysPressed.push(letter);
   guessDisplay.textContent = `${wrongGuessCounter} / ${maxGuesses}`;
 
   if (wrongGuessCounter === maxGuesses) {
