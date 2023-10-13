@@ -11,7 +11,7 @@
     <main>
       <h3 class="guess-text">
         Remaining incorrect guesses:
-        <p>0 / 6</p>
+        <p><span class="span">0</span> / 6</p>
       </h3>
       <div class="container">
         <div class="hangman-box">
@@ -28,7 +28,7 @@
               rx="250.5"
               ry="29"
               fill="black"
-              fill-opacity="0.06"
+              fill-opacity="0.15"
             />
             <path
               id="scaffold"
@@ -75,10 +75,9 @@
               New Game
             </button>
           </div>
-          <!-- you win / you lose 
-        btn new game or cancel btn -->
         </div>
       </div>
+      <div class="overlay hidden"></div>
     </main>
   </body>
 </html>
