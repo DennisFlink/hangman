@@ -4,9 +4,14 @@
   box-sizing: border-box;
 }
 body {
-  color: grey;
+  background-color: rgb(231, 230, 230);
   width: 100vw;
   height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  padding: 1em;
 }
 
 .container {
@@ -16,9 +21,10 @@ body {
   align-items: center;
   gap: 2em;
 }
+
 /* KEYBOARD FOR INPUT */
 .keyboard-box {
-  background-color: #e1e166;
+  background-color: #8ce99a;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -41,15 +47,15 @@ body {
 .letter:hover {
   background-color: #2980b9;
 }
-.letter.wrong {
+.wrong {
   background-color: #adb5bd;
   opacity: 0.2;
   color: white;
   pointer-events: none;
 }
 
-.letter.right {
-  background-color: green;
+.right {
+  background-color: #2b8a3e;
   color: white;
   pointer-events: none;
 }
@@ -71,6 +77,18 @@ body {
 }
 
 /* MODAL-BOX */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s;
+}
 .modal-box {
   display: block;
   position: fixed;
@@ -137,10 +155,6 @@ body {
   display: none;
 }
 
-h1 {
-  text-align: center;
-  padding: 1em;
-}
 /* INCORRECT GUESSES */
 .guess-text {
   position: absolute;
@@ -153,17 +167,3 @@ h1 {
   text-align: center;
   padding: 1em;
 }
-
-#tries {
-  color: #62a334;
-}
-
-#body,
-#ground,
-#legs,
-#arms,
-#scaffold,
-#head {
-  display: none;
-}
-
