@@ -1,7 +1,7 @@
 # hangman
 Gruppmedlemmar
 
-Ghyath Sabeaalil 
-Dennis Flinkfeldt
+Ghyath Sabeaalil, 
+Dennis Flinkfeldt,
 Anton Håkansson
 
