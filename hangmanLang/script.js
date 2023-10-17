@@ -120,7 +120,6 @@ function generateWord(lang) {
     'tavla',
     'snus',
     'asfalt',
-    'Borås',
     'LidköPing',
     'tangentbord',
     'dator',

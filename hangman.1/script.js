@@ -229,26 +229,3 @@ function addBodyParts() {
 }
 
 newGameBtn.addEventListener('click', newGame);
-
-/* function addBodyParts() {
-  const hangmanPartIds = [
-    '#ground',
-    '#scaffold',
-    '#head',
-    '#body',
-    '#arms',
-    '#legs',
-  ];
-
-  hangmanPartIds.forEach((partId, index) => {
-    const addPart = document.querySelector('svg ' + partId);
-
-    if (index < wrongGuessCounter) {
-      addPart.style.display = 'block';
-    } else {
-      addPart.style.display = 'none';
-    }
-  });
-
-  guessSpan.textContent = wrongGuessCounter.toString();
-} */
